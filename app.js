@@ -10,13 +10,14 @@ import messageRoute from "./routes/message.route.js"
 
 const app = express();
 
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true}))
-app.use(express.json())
-app.use(cookieParser())
-
 app.get('/', (req, res) => {
     res.send('Server is up and running!');
   });
+
+
+app.use(cors({ origin: process.env.CLIENT_URL, credentials: true}))
+app.use(express.json())
+app.use(cookieParser())
 
 app.use("/api/auth", authRoute)
 app.use("/api/users", userRoute);

@@ -14,15 +14,11 @@ app.get('/', (req, res) => {
     res.send('Server is up and running!');
   });
 
-
-  app.use(
-    cors({
-      origin: ["https://yours-ten.vercel.app", "https://yours-socket.vercel.app"],
-      credentials: true,
-      methods: ["GET", "POST", "PUT", "DELETE"],
-      allowedHeaders: ["Content-Type", "Authorization"],
-    })
-  );
+  app.use(cors({
+    origin: "*", // Allow all origins temporarily
+    credentials: true
+  }));
+  
 app.use(express.json())
 app.use(cookieParser())
 

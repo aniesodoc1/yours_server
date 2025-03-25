@@ -15,11 +15,14 @@ app.get('/', (req, res) => {
   });
 
 
-  app.use(cors({ 
-    origin: [process.env.CLIENT_URL, process.env.SOCKET_URL],  // Array of allowed origins
-    credentials: true,
-  }));
-
+  app.use(
+    cors({
+      origin: ["https://yours-ten.vercel.app", "https://yours-socket.vercel.app"],
+      credentials: true,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      allowedHeaders: ["Content-Type", "Authorization"],
+    })
+  );
 app.use(express.json())
 app.use(cookieParser())
 

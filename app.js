@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   });
 
   app.use(cors({
-    origin: "*", // Allow all origins temporarily
+    origin: ["https://yours-ten.vercel.app", "https://yours-socket.vercel.app"],
     credentials: true
   }));
   
